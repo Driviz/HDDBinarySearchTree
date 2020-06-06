@@ -22,7 +22,7 @@ public class HDDNode {
 	}
 
 	public HDDNode(String key) throws IOException {
-		Path path = Paths.get("data/" + key);
+		Path path = Paths.get("HDDBinarySearchTree/data/" + key);
 		List<String> fileData = Files.readAllLines(path);
 		this.key = fileData.get(0);
 		this.value = fileData.get(1);
@@ -75,7 +75,7 @@ public class HDDNode {
 	}
 
 	private void writeToFile() {
-		Path path = Paths.get("data/" + key);
+		Path path = Paths.get("HDDBinarySearchTree/data/" + key);
 		try {
 			Files.write(path, toString().getBytes(), StandardOpenOption.CREATE);
 		} catch (IOException e) {

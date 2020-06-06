@@ -11,7 +11,7 @@ import java.util.Queue;
 
 public class HDDBST {
 	private HDDNode root;
-	private Path path = Paths.get("data/root.txt");
+	private Path path = Paths.get("HDDBinarySearchTree/data/root.txt");
 
 	public HDDBST() throws IOException {
 		List<String> fileData = Files.readAllLines(path);
@@ -21,7 +21,7 @@ public class HDDBST {
 			this.root = null;
 	}
 
-	void put(String key, String value) {
+	synchronized void put(String key, String value) {
 		try {
 			putHelper(root, key, value);
 		} catch (IOException e) {
